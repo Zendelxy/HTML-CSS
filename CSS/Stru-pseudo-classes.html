@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p:first-child {
+        color: greenyellow;
+      }
+      div > p:nth-child(2) {
+        color: blue;
+      }
+      div > p:nth-of-type(3) {
+        color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- ex並不會變綠色 -->
+      <span>ex</span>
+      <p>a</p>
+      <div>
+        <p>a1</p>
+        <p>a2</p>
+        <p>a3</p>
+      </div>
+      <p>b</p>
+      <div>
+        <p>b1</p>
+        <p>b2</p>
+        <p>b3</p>
+      </div>
+      <p>c</p>
+    </div>
+  </body>
+</html>

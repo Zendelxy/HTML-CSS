@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form practice</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>py公司食堂線上點餐區</legend>
+      <form action="https://www.google.com/search" target="_blank">
+        <label> 帳號:<input type="text" name="acc" /> </label>
+        <br />
+        <label> 密碼:<input type="password" name="pwd" /> </label>
+        <br />
+        主餐:
+        <select name="food">
+          <option value="n01" selected>乾麵</option>
+          <option value="n02">湯麵</option>
+          <option value="n03">炸醬麵</option>
+          <option value="n04">牛肉麵</option>
+        </select>
+        <br />
+        麵體:
+        <input type="radio" name="ton" value="plain" checked />陽春麵
+        <input type="radio" name="ton" value="yi" />意麵
+        <input type="radio" name="ton" value="ramen" />拉麵
+        <br />
+        份量:
+        <input type="radio" name="quan" value="large" checked />大碗
+        <input type="radio" name="quan" value="medium" />中碗
+        <input type="radio" name="quan" value="small" />小碗
+        <br />
+        各項調味:
+        <input type="checkbox" name="season" value="Sspicy" />小辣
+        <input type="checkbox" name="season" value="Mspicy" />中辣
+        <input type="checkbox" name="season" value="Lspicy" />大辣
+        <input type="checkbox" name="season" value="Mpepper" />多胡椒
+        <input type="checkbox" name="season" value="Msalt" />多鹽
+        <input type="checkbox" name="season" value="Mgreenonion" />多蔥
+        <input type="checkbox" name="season" value="Mgarlic" />多蒜頭
+        <br />
+        備註:
+        <textarea name="note"></textarea>
+        <br />
+        <input type="submit" value="選擇完畢" />
+        <input type="reset" value="不想吃了" />
+      </form>
+    </fieldset>
+  </body>
+</html>

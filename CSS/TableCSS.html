@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 280px;
+        border: 3px black solid;
+        caption-side: bottom;
+        text-align: center;
+        table-layout: fixed;
+        border-spacing: 10px;
+        empty-cells: hide;
+      }
+      th,
+      td {
+        border: 1px gray solid;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        食材明細表
+      </caption>
+      <thead>
+        <tr>
+          <th>名稱</th>
+          <th>單價</th>
+          <th>數目</th>
+          <th>總價</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>青蔥</td>
+        <td>3</td>
+        <td>20</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td>洋蔥</td>
+        <td>2</td>
+        <td>20</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>豬肉(200g)</td>
+        <td>1</td>
+        <td>70</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <td>醬油</td>
+        <td>1</td>
+        <td>110</td>
+        <td>110</td>
+      </tr>
+      <tfoot>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>280</td>
+      </tfoot>
+    </table>
+  </body>
+</html>

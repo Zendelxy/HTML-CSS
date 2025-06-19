@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer1 {
+        width: 400px;
+        height: 400px;
+        background-color: gray;
+      }
+      .inner1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-bottom: 100px;
+      }
+      .inner2 {
+        width: 100px;
+        height: 100px;
+        margin-top: 200px;
+        background-color: beige;
+      }
+
+      .outer2 {
+        width: 400px;
+        height: auto;
+        background-color: skyblue;
+        /* overflow: hidden; 解決方法1(最優)*/
+        /* border: 1px black solid; 解決方法2*/
+        /* padding: 1px;解決方法3 */
+      }
+
+      .inner3 {
+        width: 100px;
+        height: 100px;
+        margin-top: 200px;
+        background-color: purple;
+      }
+      .inner4 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        margin-bottom: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 狀況1，兩個兄弟元素垂直排列時，他們的上下外邊距會重疊，因此會取大者為margin -->
+    <div class="outer1">
+      <div class="inner1"></div>
+      <div class="inner2"></div>
+    </div>
+    <hr />
+    <!-- 狀況2，兩個兄弟元素垂直排列且父元素height為auto時，他們的上下外邊距會被父元素"拿走" -->
+    <div class="outer2">
+      <div class="inner3"></div>
+      <div class="inner4"></div>
+    </div>
+  </body>
+</html>

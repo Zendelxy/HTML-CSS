@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .clear::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .container1 {
+        width: 940px;
+        height: 100px;
+        line-height: 100px;
+        margin: 0 auto;
+      }
+      .logo {
+        width: 200px;
+        height: 100px;
+        background-color: gray;
+        float: left;
+      }
+      .b1 {
+        width: 500px;
+        height: 100px;
+        margin: 0 20px;
+        background-color: gray;
+        float: left;
+      }
+      .b2 {
+        width: 200px;
+        height: 100px;
+        background-color: gray;
+        float: left;
+      }
+      .menu {
+        width: 940px;
+        line-height: 50px;
+        height: 50px;
+        background-color: gray;
+        margin: 10px auto;
+      }
+      .container2 {
+        margin: 0 auto;
+        width: 940px;
+        height: 500px;
+      }
+      .containerA {
+        width: 350px;
+        height: 500px;
+        float: left;
+        margin-right: 10px;
+      }
+      .containerB {
+        width: 350px;
+        height: 500px;
+        float: left;
+        margin: 0 10px;
+      }
+      .containerC {
+        width: 200px;
+        height: 500px;
+        float: left;
+        margin-left: 10px;
+      }
+      .boxA {
+        width: 348px;
+        height: 248px;
+        float: left;
+        border: 1px black solid;
+        margin-bottom: 10px;
+        line-height: 248px;
+      }
+      .boxB {
+        width: 168px;
+        height: 238px;
+        float: left;
+        border: 1px black solid;
+        line-height: 238px;
+      }
+      .Bodd {
+        margin-right: 5px;
+      }
+      .Beven {
+        margin-left: 5px;
+      }
+      .boxC {
+        width: 198px;
+        height: 160px;
+        border: 1px black solid;
+        line-height: 160px;
+        float: left;
+      }
+      .boxM {
+        margin: 7px 0;
+      }
+      .foot {
+        margin: 0 auto;
+        width: 940px;
+        line-height: 100px;
+        height: 100px;
+        background-color: gray;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container1 clear">
+      <div class="logo">logo</div>
+      <div class="b1">banner1</div>
+      <div class="b2">banner2</div>
+    </div>
+    <div class="menu">menu</div>
+    <div class="container2">
+      <div class="containerA">
+        <div class="boxA">box1</div>
+        <div class="boxB Bodd">box3</div>
+        <div class="boxB Beven">box4</div>
+      </div>
+      <div class="containerB">
+        <div class="boxA">box2</div>
+        <div class="boxB Bodd">box5</div>
+        <div class="boxB Beven">box6</div>
+      </div>
+      <div class="containerC">
+        <div class="boxC">box7</div>
+        <div class="boxC boxM">box8</div>
+        <div class="boxC">box9</div>
+      </div>
+    </div>
+    <div class="foot">foot</div>
+  </body>
+</html>

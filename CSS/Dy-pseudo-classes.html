@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #act {
+      background: rebeccapurple;
+      color: rebeccapurple;
+    }
+    /* hover */
+    span:hover {
+      background-color: cornflowerblue;
+    }
+    /* active */
+    #act:active {
+      color: black;
+    }
+    /* visited */
+    .g:visited {
+      color: orange;
+    }
+    .ya:visited {
+      color: purple;
+    }
+    .yo:visited {
+      color: red;
+    }
+    /* link */
+    #ele:link {
+      color: aqua;
+    }
+    #jun:link {
+      color: aqua;
+    }
+    #sen:link {
+      color: aqua;
+    }
+    /* focus */
+    [name="test"]:focus {
+      background-color: aquamarine;
+    }
+  </style>
+  <body>
+    <div>
+      <span>懸浮改變背景</span>
+      <div>點↓</div>
+      <p id="act">驚喜</p>
+      <div>這邊↑</div>
+      <div>
+        <a class="g" href="https://www.google.com/?hl=zh_TW" target="_blank"
+          >google</a
+        >
+        <a class="ya" href="https://tw.yahoo.com/" target="_blank">yahoo</a>
+        <a class="yo" href="https://www.youtube.com/" target="_blank"
+          >youtube</a
+        >
+      </div>
+      <select name="test">
+        <option value="t1">test1</option>
+        <option value="t2">test2</option>
+        <option value="t3">test3</option>
+      </select>
+      <input type="text" name="test" />
+      <div>
+        <a
+          id="ele"
+          href="https://www.mcps.kh.edu.tw/index.php?WebID=217"
+          target="_blank"
+          >我的小學</a
+        >
+        <a id="jun" href="https://www.qzjh.kh.edu.tw/qzjh/" target="_blank"
+          >我的國中</a
+        >
+        <a id="sen" href="https://www.fssh.khc.edu.tw/home" target="_blank"
+          >我的高中</a
+        >
+      </div>
+      <p>c</p>
+    </div>
+  </body>
+</html>
