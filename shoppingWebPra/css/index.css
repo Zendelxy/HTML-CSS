@@ -1,0 +1,41 @@
+/* 全局 */
+.container{
+    width: 1190px;
+    margin: 0 auto;
+}
+
+/* #region topBar */
+.topBar{
+    background-color: #ECECEC ;
+    height: 30px;
+}
+.topBar li{
+    float: left;
+    font-size: 12px;
+}
+.topBar a{
+    padding: 0 10px;
+    border-right:1px black  solid;
+}
+.topBar a:hover{
+    color: rgb(196, 79, 79);
+}
+
+.topBarLeft{
+    float: left;
+    font-size: 0px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.topBarRight{
+    float: right;
+    font-size: 0px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.topBar li:last-child a{
+    border: 0;
+}
+/* #endregion topBar */
