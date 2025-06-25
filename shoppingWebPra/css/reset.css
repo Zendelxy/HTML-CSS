@@ -48,6 +48,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* input清除 */
+input{
+	padding: 0;
+  	margin: 0;
+	border: 0;
+}
+input:focus{
+	outline: none;
+}
+/* button清除 */
+button{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
 /* 清除float塌陷 */
 .clearfix::after{
 	content: "";
