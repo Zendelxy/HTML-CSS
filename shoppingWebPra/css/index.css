@@ -106,3 +106,44 @@
     color: rgb(196, 79, 79);
 }
 /* #endregion mainNav */
+
+/* #region mainContent */
+.mainContent{
+    height: 458px;
+    font-size: 0px;
+    margin: 10px 0;
+}
+
+.sideNav{
+    width: 190px;
+    height: 458px;
+    background-color: #F4F4F4;
+}
+.sideNav li{
+    font-size: 14px;
+    padding-left: 16px;
+    line-height: 34px;
+}
+.sideNav li a {
+    color: #333;
+}
+.sideNav li:hover{
+    background-color:#DD302D;
+}
+.sideNav a:hover{
+    color: white;
+}
+
+.mainContent .banner{
+    width: 690px;
+    height: 458px;
+    margin: 0 10px;
+    background-color: green;
+}
+
+.sideOther{
+    width: 290px;
+    height: 458px;
+    background-color: blue;
+}
+/* #endregion mainContent */
