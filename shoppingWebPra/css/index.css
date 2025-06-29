@@ -118,6 +118,7 @@
     width: 190px;
     height: 458px;
     background-color: #F4F4F4;
+    position: relative;
 }
 .sideNav li{
     font-size: 14px;
@@ -130,9 +131,47 @@
 .sideNav li:hover{
     background-color:#DD302D;
 }
-.sideNav a:hover{
+.sideNav li>a:hover{
     color: white;
 }
+.sideNav li .secondMenu{
+    width: 680px;
+    height: 458px;
+    background-color: #ECECEC;
+    position: absolute;
+    padding-left: 20px;
+    top:0;
+    left: 190px;
+    visibility: hidden;
+}
+.sideNav li:hover .secondMenu{
+    visibility: visible;
+}
+.sideNav dl{
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.sideNav dl:first-child{
+    margin-top: 20px;
+}
+.sideNav dt{
+    width: 70px;
+    color: black;
+    margin: 0 16px;
+}
+.sideNav dd{
+    padding: 0px 10px;
+    color: #666;
+    border-left: 1px solid black;
+}
+.sideNav dd a:hover{
+    color: #DD302D;
+}
+
+
+
 
 .mainContent .banner{
     width: 690px;
