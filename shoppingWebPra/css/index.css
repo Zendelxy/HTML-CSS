@@ -241,3 +241,19 @@
     color: #000;
 }
 /* #endregion mainContent */
+
+/* #region timeLimited */
+.timeLimited img{
+    width: 239px;
+    height: 190px;
+}
+.timeLimited .title{
+    width: 190px;
+}
+.timeLimited a{
+    margin-right: 11px;
+}
+.timeLimited a:last-child{
+    margin-right: 0;
+}
+/* #endregion timeLimited */
