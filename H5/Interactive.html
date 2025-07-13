@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>可互動的標籤</title>
+  </head>
+  <body>
+    <span>datalist，需與form一起使用，有搜索提示的效用</span>
+    <form action="#"></form>
+    <input type="text" list="nameSearch" />
+    <button>搜尋</button>
+    <datalist id="nameSearch">
+      <option value="Terry">Terry</option>
+      <option value="Teddy">Teddy</option>
+      <option value="Wilson">Wilson</option>
+      <option value="Winston">Winston</option>
+    </datalist>
+    <hr />
+    <span>details&summary</span>
+    <details>
+      <summary>我是標題，點我展開</summary>
+      詳細內容: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+      quisquam.
+    </details>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>有視覺反饋的標籤</title>
+  </head>
+  <body>
+    <span>meter(無optimum):</span>
+    <br />
+    <meter max="100" min="0" high="75" low="25" value="20"></meter>
+    <br />
+    <meter max="100" min="0" high="75" low="25" value="50"></meter>
+    <br />
+    <meter max="100" min="0" high="75" low="25" value="80"></meter>
+    <hr />
+    <span>meter(有optimum):</span>
+    <br />
+    <meter max="100" min="0" high="75" low="25" value="20" optimum="90"></meter>
+    <br />
+    <meter max="100" min="0" high="75" low="25" value="50" optimum="90"></meter>
+    <br />
+    <meter max="100" min="0" high="75" low="25" value="80" optimum="90"></meter>
+    <hr />
+    <span>progress</span>
+    <br />
+    <span>不設定max&value:</span>
+    <br />
+    <progress></progress>
+    <br />
+    <span>正常設定: </span>
+    <br />
+    <progress max="100" value="50"></progress>
+  </body>
+</html>
