@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表單控件相關屬性</title>
+  </head>
+  <body>
+    <form action="#">
+      placeholder:提示文字，可用於文字輸入類
+      <br />
+      帳號:<input type="text" name="acc" placeholder="請輸入帳號" />
+      <br />
+      密碼:<input type="password" name="pwd" placeholder="請輸入密碼" />
+      <br />
+      其他:<textarea name="other" placeholder="任意填寫"></textarea>
+      <br />
+      <button>提交</button>
+    </form>
+    <hr />
+    <form action="#">
+      required:表示該項必填，可用於除button外的控件
+      <br />
+      帳號:<input type="text" name="acc" placeholder="請輸入帳號" required />
+      <br />
+      密碼:<input
+        type="password"
+        name="pwd"
+        placeholder="請輸入密碼"
+        required
+      />
+      <br />
+      <input type="radio" name="gender" value="male" required />男
+      <input type="radio" name="gender" value="female" />女
+      <br />
+      <input
+        type="checkbox"
+        name="confirm"
+        value="alreadyRead"
+        required
+      />我已閱讀完規則
+      <input type="checkbox" name="confirm" value="email" />我想收到電子郵件
+      <br />
+      其他:<textarea name="other" placeholder="任意填寫" required></textarea>
+      <br />
+      <button>提交</button>
+    </form>
+    <hr />
+    <form action="#">
+      autofocus:自動獲取焦點
+      <br />
+      Look in my eyes:<input type="text" autofocus />
+    </form>
+    <hr />
+    <form action="#" autocomplete="on">
+      autocomplete:根據紀錄自動補全輸入，需設值on/off(全域開關)，用於文字輸入類的控件
+      <br />
+      對於特定種類的輸入有非常多種的值，用到再去查
+      <br />
+      <input type="text" name="auto" autocomplete="on" />
+      <br />
+      <button>提交</button>
+    </form>
+    <hr />
+    <form action="#">
+      pattern:需設值="正則表達式"，用於文字輸入類的控件(除textarea)，空input不會驗證，往往配合required
+      <br />
+      <input
+        type="text"
+        name="checking"
+        placeholder="長度至少為8，且需有大小寫字母及數字"
+        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+        required
+        style="width: 300px"
+      />
+      <button>提交</button>
+    </form>
+  </body>
+</html>
