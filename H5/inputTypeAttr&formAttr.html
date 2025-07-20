@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input中type的新屬性&form的新屬性</title>
+  </head>
+  <body>
+    type的新屬性: <br />
+    第一部分:表單提交時會驗證，輸入為空時不驗證(建議加上required)
+    <form action="#">
+      1.email
+      <input type="email" name="email" />
+      <br />
+      2.url
+      <input type="url" name="url" />
+      <br />
+      3.number(可搭配min, min, step，min:10、max:90、step:2)
+      <input type="number" name="number" min="10" max="90" step="2" />
+      <br />
+      <button>提交</button>
+    </form>
+    <hr />
+    第二部分:表單提交時不驗證(可加上required來使表單提交不為空)
+    <form action="#">
+      1.search
+      <input type="search" name="search" />
+      <br />
+      2.tel(移動端使用時會呼叫數字鍵盤)
+      <input type="tel" name="tel" />
+      <br />
+      3.range(預設值為50，可用max,min)
+      <input type="range" name="range" />
+      <br />
+      4.color(預設值為黑色)
+      <input type="color" name="color" />
+      <br />
+      5.date(預設值為空)
+      <input type="date" name="date" />
+      <br />
+      6.month(預設值為空)
+      <input type="month" name="month" />
+      <br />
+      7.week(預設值為空)
+      <input type="week" name="week" />
+      <br />
+      8.time(預設值為空)
+      <input type="time" name="time" />
+      <br />
+      9.datetime-local:日期+時間(預設值為空)
+      <input type="datetime-local" name="datetime-local" />
+      <br />
+      <button>提交</button>
+    </form>
+    <hr />
+    novalidate:form的新屬性，效果為表單提交時不再驗證
+    <br />
+    (就連input的type以及required都會無視)
+    <form action="#" novalidate>
+      email:<input type="email" name="novalidate" required />
+      <button>提交</button>
+    </form>
+  </body>
+</html>

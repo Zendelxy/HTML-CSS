@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新增全局屬性</title>
+    <style>
+      div {
+        width: 400px;
+        height: 150px;
+        font-size: 20px;
+        background-color: skyblue;
+        border: 1px solid black;
+      }
+      .menu {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid #ccc;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      }
+      .menu li {
+        padding: 8px 12px;
+        cursor: default;
+      }
+      .menu li:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    contenteditable:
+    <div contenteditable="true">可以自己改這裡的字</div>
+    draggable:
+    <div draggable="true">這個div可以拖拽</div>
+    hidden:隱藏後不佔據空間
+    <div hidden></div>
+    <br />
+    spellcheck:(會看瀏覽器設定有沒有開啟檢查拼寫)
+    <div>
+      <span spellcheck="true" contenteditable="true">wrong word</span>
+      <br />
+      <span spellcheck="true" contenteditable="true">worgn dorw</span>
+    </div>
+    contextmenu:自訂菜單(現已不支援，可用ul、li搭配CSS、JS實現)
+    <div id="mymenu">在這裡點擊右鍵</div>
+    <ul id="contextMenu" class="menu">
+      <li>選項1</li>
+      <li>選項2</li>
+    </ul>
+    data-*:存儲自定義資料(需搭配JS)
+    <script>
+      const target = document.getElementById("mymenu");
+      const menu = document.getElementById("contextMenu");
+
+      // 顯示選單
+      target.addEventListener("contextmenu", (e) => {
+        e.preventDefault(); //阻止原生選單
+        menu.style.top = `${e.pageY}px`;
+        menu.style.left = `${e.pageX}px`;
+        menu.style.display = "block";
+      });
+
+      // 點其他地方關閉選單
+      document.addEventListener("click", () => {
+        menu.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

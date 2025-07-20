@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5兼容性</title>
+    <style>
+      span {
+        font: 20px;
+        color: gray;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="background-color: grey">我是這個網頁的header</header>
+    <div>
+      <aside
+        style="
+          width: 40px;
+          float: right;
+          background-color: greenyellow;
+          border: 1px solid black;
+        "
+      >
+        我是一個側邊欄
+        <nav style="border: 1px solid black">
+          <a href="#">我是側邊欄中的導覽連結</a>
+        </nav>
+      </aside>
+      <article
+        style="height: 500px; margin-top: 50px; background-color: crimson"
+      >
+        I am the main content.
+        <section style="height: 150px; background-color: aqua">
+          I am the first section.
+        </section>
+        <section style="height: 150px; background-color: skyblue">
+          I am the second section.
+        </section>
+      </article>
+    </div>
+    <footer style="height: 100px; margin-top: 50px; background-color: wheat">
+      我是這個網頁的footer
+    </footer>
+    <div>
+      <span
+        >兼容性主要針對ie8及以下的版本
+        <br />
+        <span
+          >&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge"&gt;:告訴 IE
+          使用它自己支援的最新標準模式</span
+        >
+        <br />
+        &lt;!--[if lt IE 9]&gt;
+        <br />
+        &lt;script
+        src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"&gt;&lt;/script&gt;
+        <br />
+        &lt;![endif]--&gt;
+        <br />
+        使用條件式註解(IE專用)，讓IE8及以下版本載入html5shiv.js，效果為讓JS建立這些新標籤來讓IE認得並渲染他們，對於video或audio這些標籤是沒用的
+      </span>
+    </div>
+  </body>
+</html>
