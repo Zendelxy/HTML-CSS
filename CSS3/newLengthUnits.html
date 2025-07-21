@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新增長度單位</title>
+    <style>
+      html {
+        font-size: 20px;
+      }
+      .rem {
+        width: 20rem;
+        background-color: gray;
+      }
+      .vw {
+        width: 30vw;
+        background-color: skyblue;
+      }
+      .vh {
+        width: 30vh;
+        background-color: wheat;
+      }
+      .vmax {
+        width: 30vmax;
+        background-color: thistle;
+      }
+      .vmin {
+        width: 30vmin;
+        background-color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rem">
+      rem:root元素(html)字體大小的倍數
+      <br />
+      html font-size為20px所以此div寬為20rem=400px
+    </div>
+    <div class="vw">
+      vw:視口(viewport)寬度的百分之多少
+      <br />
+      width為30vw所以此div寬為視口寬的30%
+    </div>
+    <div class="vh">
+      vh:視口(viewport)高度的百分之多少
+      <br />
+      width為30vh所以此div寬為視口高的30%
+    </div>
+    <div class="vmax">
+      vmax:視口(viewport)寬與高中較高者的百分之多少
+      <br />
+      width為30vmax所以此div寬為視口寬與高中較高者的30%
+    </div>
+    <div class="vmin">
+      vmin:視口(viewport)寬與高中較低者的百分之多少
+      <br />
+      width為30vmin所以此div寬為視口寬與高中較低者的30%
+    </div>
+  </body>
+</html>
