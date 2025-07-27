@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>盒子相關屬性</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        border: 14px solid black;
+        margin: 20px;
+        font-size: 20px;
+        padding: 10px;
+        overflow: visible;
+      }
+      .con {
+        box-sizing: content-box;
+        background-color: skyblue;
+        overflow-wrap: break-word;
+      }
+      .bor {
+        box-sizing: border-box;
+        background-color: wheat;
+      }
+
+      em {
+        text-decoration: underline;
+      }
+      .box1 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+        background-color: paleturquoise;
+        overflow: auto;
+      }
+      .none {
+        resize: none;
+      }
+      .both {
+        resize: both;
+      }
+      .horizontal {
+        resize: horizontal;
+      }
+      .vertical {
+        resize: vertical;
+      }
+
+      .shadow {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 30px;
+        background-color: darkgray;
+        box-shadow: 15px 5px 20px 10px yellow;
+      }
+      .inset {
+        box-shadow: 15px 5px 20px 10px yellow inset;
+      }
+
+      .box2 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        background-color: aquamarine;
+        margin: 10px;
+        display: inline-block;
+      }
+      .op0dot1 {
+        opacity: 0.1;
+      }
+      .op0dot3 {
+        opacity: 0.3;
+      }
+      .op0dot5 {
+        opacity: 0.5;
+      }
+      .op0dot7 {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    box-sizing:content-box(預設)/border-box
+    <br />
+    <div class="box con">border+padding+width/height才是box實際大小</div>
+    <div class="box bor">width&height為box實際大小</div>
+    <br />
+    resize:none(預設)/both/horizontal/vertical，需要搭配overflow且值不為<em
+      title="完整顯示內容，會發生溢出或撐開容器的狀況"
+      >visible</em
+    >才能使用
+    <br />
+    <div class="box1 none">none，不可resize</div>
+    <div class="box1 both">both，垂直與水平方向皆可resize</div>
+    <div class="box1 horizontal">horizontal，水平方向可resize</div>
+    <div class="box1 vertical">vertical，垂直方向可resize</div>
+    <br />
+    box-shadow:
+    <table border="2">
+      <thead>
+        <tr>
+          <th>屬性</th>
+          <th>值</th>
+          <th>描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>offset-x</td>
+          <td>px(必填)</td>
+          <td>順位第一個的值，陰影的x位移</td>
+        </tr>
+        <tr>
+          <td>offset-y</td>
+          <td>px(必填)</td>
+          <td>順位第二個的值，陰影的y位移</td>
+        </tr>
+        <tr>
+          <td>blur-radius</td>
+          <td>px(預設為0)</td>
+          <td>順位第三個的值，陰影的模糊半徑</td>
+        </tr>
+        <tr>
+          <td>spread-radius</td>
+          <td>px(預設為0)</td>
+          <td>順位第四個的值，陰影的縮放半徑</td>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td>顏色</td>
+          <td>陰影顏色</td>
+        </tr>
+        <tr>
+          <td>inset</td>
+          <td>-</td>
+          <td>出現該屬性值後，陰影變成內陰影</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="shadow">無inset</div>
+    <div class="shadow inset">inset</div>
+    <br />
+    opacity:不透明度，值範圍為0(透明)~1(不透明)
+    <br />
+    <div class="box2 op0dot1">0.1</div>
+    <div class="box2 op0dot3">0.3</div>
+    <div class="box2 op0dot5">0.5</div>
+    <div class="box2 op0dot7">0.7</div>
+    <div class="box2 op1">1</div>
+  </body>
+</html>
