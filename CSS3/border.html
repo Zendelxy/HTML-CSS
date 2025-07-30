@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>border相關屬性</title>
+    <style>
+      strong {
+        font-size: 30px;
+      }
+      div {
+        width: 200px;
+        height: auto;
+        display: inline-block;
+        margin-right: 30px;
+      }
+      .block {
+        width: 200px;
+        height: 200px;
+        border: 5px solid black;
+        background-color: orange;
+      }
+      .one {
+        border-radius: 30px;
+      }
+      .two {
+        border-radius: 15px 50px;
+      }
+      .three {
+        border-radius: 20px 50px 70px;
+      }
+      .four {
+        border-radius: 10px 40px 70px 100px;
+      }
+      .oval {
+        border-radius: 40px / 70px;
+      }
+      .singal {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 50px;
+      }
+
+      span {
+        font-size: 35px;
+      }
+      .width {
+        outline-style: solid;
+        outline-width: 10px;
+      }
+      .color {
+        outline-style: auto;
+        outline-color: rebeccapurple;
+      }
+      .style {
+        outline-style: dotted;
+      }
+      .mult {
+        outline: 10px ridge wheat;
+      }
+      .offset1 {
+        outline: 5px dashed red;
+        outline-offset: 10px;
+      }
+      .offset2 {
+        outline: 5px dashed red;
+        outline-offset: -20px;
+      }
+    </style>
+  </head>
+  <body>
+    <strong>border-radius:邊框圓角</strong>
+    <br />
+    <div>
+      一個值，同時設定四角
+      <div class="block one"></div>
+    </div>
+    <div>
+      兩個值，左上右下/右上左下
+      <div class="block two"></div>
+    </div>
+    <div>
+      三個值，左上/右上左下/右下
+      <div class="block three"></div>
+    </div>
+    <div>
+      四個值，左上/右上/右下/左下
+      <div class="block four"></div>
+    </div>
+    <div>
+      可以將用x / y的寫法來分別設定兩個半徑來做出橢圓
+      <div class="block oval"></div>
+    </div>
+    <div>
+      也可以用border-(top/bottom)-(left/right)-radius來單獨設定單一個角
+      <div class="block singal"></div>
+    </div>
+    <hr />
+    <strong>outline:邊框外的輪廓</strong>
+    <br />
+    與border之不同:
+    <ul>
+      <li>不占空間，純裝飾</li>
+      <li>不一定是矩形</li>
+      <li>無法單獨操控一個邊</li>
+    </ul>
+    <div>
+      <span>outline-width</span>
+      <div class="block width"></div>
+    </div>
+    <div>
+      <span>outline-color</span>
+      <div class="block color"></div>
+    </div>
+    <div>
+      <span>outline-style</span>
+      <div class="block style"></div>
+    </div>
+    <div>
+      <span>outline複合</span>
+      <div class="block mult"></div>
+    </div>
+    <div>
+      <span>outline-offset(正外)</span>
+      <div class="block offset1"></div>
+    </div>
+    <div>
+      <span>outline-offset(負內)</span>
+      <div class="block offset2"></div>
+    </div>
+    <br />
+    ▪️outline-offset並非outline子屬性，而是獨立屬性，不能出現在複合屬性中
+  </body>
+</html>
