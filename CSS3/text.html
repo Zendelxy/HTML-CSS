@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文本相關屬性</title>
+    <style>
+      span {
+        font-size: 20px;
+      }
+      .shadow {
+        color: transparent;
+        text-shadow: 0px 0px 2px red;
+      }
+      .whiteSpace {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin-top: 10px;
+      }
+      .textOverflow {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .stroke1 {
+        font-size: 50px;
+        color: white;
+        -webkit-text-stroke: 1px black;
+      }
+      .stroke2 {
+        font-size: 50px;
+        color: transparent;
+        -webkit-text-stroke: 2px orange;
+      }
+    </style>
+  </head>
+  <body>
+    <span>text-shadow:文本陰影(默認為none)</span>
+    <table border="2">
+      <thead>
+        <tr>
+          <th>屬性</th>
+          <th>值</th>
+          <th>描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>offset-x</td>
+          <td>px(必填)</td>
+          <td>順位第一個的值，陰影的x位移</td>
+        </tr>
+        <tr>
+          <td>offset-y</td>
+          <td>px(必填)</td>
+          <td>順位第二個的值，陰影的y位移</td>
+        </tr>
+        <tr>
+          <td>blur-radius</td>
+          <td>px(預設為0)</td>
+          <td>順位第三個的值，陰影的模糊半徑</td>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td>顏色</td>
+          <td>陰影顏色</td>
+        </tr>
+      </tbody>
+    </table>
+    <span class="shadow">原本的字變透明了</span>
+    <hr />
+    <span>white-space:如何處理元素中空白字符</span>
+    <br />
+    <span style="text-decoration: underline wavy red"
+      >「空白是否合併，如何合併」與「是否換行，如何換行」</span
+    >
+    <table border="2">
+      <thead>
+        <tr>
+          <th>值</th>
+          <th>效果</th>
+        </tr>
+        <tr>
+          <td>normal(默認)</td>
+          <td>不保留連續空格，換行當作單個空格，文字空間滿了自動換行</td>
+        </tr>
+        <tr>
+          <td>pre</td>
+          <td>保留連續空格，換行正常作用，不自動換行</td>
+        </tr>
+        <tr>
+          <td>pre-wrap</td>
+          <td>保留連續空格，換行正常作用，文字空間滿了自動換行</td>
+        </tr>
+        <tr>
+          <td>pre-line</td>
+          <td>不保留連續空格，換行正常作用，文字空間滿了自動換行</td>
+        </tr>
+        <tr>
+          <td>nowrap</td>
+          <td>不保留連續空格，換行當作單個空格，不自動換行</td>
+        </tr>
+      </thead>
+    </table>
+    <div class="whiteSpace" style="white-space: normal">
+      normal: Lorem ipsum dolor sit amet.
+    </div>
+    <div class="whiteSpace" style="white-space: pre">
+      pre: Lorem ipsum dolor sit amet.
+    </div>
+    <div class="whiteSpace" style="white-space: pre-wrap">
+      pre-wrap: Lorem ipsum dolor sit amet.
+    </div>
+    <div class="whiteSpace" style="white-space: pre-line">
+      pre-line: Lorem ipsum dolor sit amet.
+    </div>
+    <div class="whiteSpace" style="white-space: nowrap">
+      nowrap: Lorem ipsum dolor sit amet.
+    </div>
+    <hr />
+    <span>text-overflow:設置文本內容溢出時的呈現模式</span>
+    <br />
+    <span style="text-decoration: underline wavy red"
+      >想要text-overflow生效，需要讓white-space為nowrap且overflow為visible以外的值</span
+    >
+    <br />
+    clip(默認):將溢出部分直接裁掉
+    <div class="textOverflow">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, vero.
+    </div>
+    ellipsis:將溢出部分替換成...
+    <div class="textOverflow" style="text-overflow: ellipsis">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
+      nostrum.
+    </div>
+    <hr />
+    <span>text-decoration:在CSS2就有了，在CSS3中變成了複合屬性</span>
+    <table border="2">
+      <thead>
+        <tr>
+          <th>值</th>
+          <th>效果</th>
+        </tr>
+        <tr>
+          <td>text-decoration-line</td>
+          <td>裝飾線位置</td>
+        </tr>
+        <tr>
+          <td>text-decoration-style</td>
+          <td>裝飾線形狀</td>
+        </tr>
+        <tr>
+          <td>text-decoration-color</td>
+          <td>裝飾線顏色</td>
+        </tr>
+      </thead>
+    </table>
+    <span style="text-decoration: line-through"
+      >以前只有位置，基本上可以說是半殘</span
+    >
+    <br />
+    <span style="text-decoration: mediumpurple underline double"
+      >現在則多了樣式與顏色可使用</span
+    >
+    <hr />
+    <span>-webkit-text-storke:文字描邊，複合屬性(使用時須注意兼容性問題)</span>
+    <table border="2">
+      <thead>
+        <tr>
+          <th>值</th>
+          <th>效果</th>
+        </tr>
+        <tr>
+          <td>-webkit-text-storke-width</td>
+          <td>筆觸寬度</td>
+        </tr>
+        <tr>
+          <td>-webkit-text-storke-color</td>
+          <td>筆觸顏色</td>
+        </tr>
+      </thead>
+    </table>
+    <span class="stroke1">反白 testing</span>
+    <span class="stroke2">鏤空 testing</span>
+  </body>
+</html>
