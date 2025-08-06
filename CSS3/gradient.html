@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>漸層</title>
+    <style>
+      .multBackground {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(to right, transparent, pink),
+          url(../resource/can-three-freeze-win-against-d4c-v0-sdskul0iemwc1.webp)
+            no-repeat center / cover;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      .box1 {
+        background: linear-gradient(
+          45deg,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          purple
+        );
+      }
+      .box2 {
+        background: radial-gradient(
+          40px 30px at 40px 40px,
+          orange 10px,
+          yellow 60px,
+          skyblue 80px
+        );
+      }
+      .ball {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(at 25% 30%, white, black);
+      }
+      .box3 {
+        border-radius: 50%;
+        background: conic-gradient(
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          purple
+        );
+      }
+      .box4 {
+        background: repeating-linear-gradient(45deg, orange 5%, black 10%);
+      }
+      .box5 {
+        background: repeating-radial-gradient(black 30%, orange 50%);
+      }
+      .box6 {
+        background: repeating-conic-gradient(orange 5%, black 10%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gradient</h1>
+    <h2>
+      background-image的可選值，可以用background複合屬性(多重背景)來達成帶顏色漸變效果的圖片
+    </h2>
+    <div class="multBackground"></div>
+    <hr />
+    <h2>Linear Gradient線性漸層:linear-gradient(方向, 顏色n 位置, ...)</h2>
+    <ul>
+      <li>
+        默認方向為180deg(上往下)，方向改變除了用deg也可用to
+        left/right/top/bottom表示方向
+      </li>
+      <li>位置可用px或%表示，表示到指定位置時要變為指定的顏色</li>
+    </ul>
+    <div class="box box1"></div>
+    <hr />
+    <h2>
+      Radial Gradient放射漸層:radial-gradient(方式 尺寸 at 位置, 顏色n 位置,
+      ...)
+    </h2>
+    <ul>
+      <li>方式有circle/ellipse</li>
+      <li>
+        尺寸為圓的半徑，可用px或%表示，也可以用關鍵字closest-side/farthest-side/closest-corner/farthest-corner(默認)，x與y方向的半徑可以分開設定(但關鍵字一次只能存在一個)
+      </li>
+      <li>位置有left/right/top/bottom/center(默認)，也可用px或%設定</li>
+    </ul>
+    <div class="box box2"></div>
+    甚至可以做出很擬真的球
+    <div class="ball"></div>
+    <hr />
+    <h2>Conic Gradient圓錐形漸層:conic-gradient(顏色n 位置, ...)</h2>
+    <ul>
+      <li>位置可用%或deg表示</li>
+    </ul>
+    <div class="box box3"></div>
+    <hr />
+    <h2>Repeating Gradient重複漸層</h2>
+    與前面三種漸層搭配使用
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+    <div class="box box6"></div>
+  </body>
+</html>
