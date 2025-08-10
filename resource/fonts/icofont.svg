@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+<font id="icofont" horiz-adv-x="1000" >
+<font-face font-family="IcoFont" font-weight="400" font-style="Regular" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="compass" horiz-adv-x="1000" unicode="&#x13aed;" d="M745 595l-136-354-354-136 136 354 354 136z m-191-191c-30 30-78 30-108 0-30-30-30-78 0-108 30-30 78-30 108 0 30 30 30 78 0 108z" />
+<glyph glyph-name="compass" horiz-adv-x="1000" unicode="&#x13aec;" d="M500 773c233 0 423-190 423-423 0-233-190-423-423-423-233 0-423 190-423 423 0 233 190 423 423 423m0 77c-276 0-500-224-500-500 0-276 224-500 500-500 276 0 500 224 500 500 0 276-224 500-500 500l0 0z" />
+</font>
+</defs>
+</svg>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB字體與icon font</title>
+    <link rel="stylesheet" href="../resource/icofont.min.css" />
+    <style>
+      @font-face {
+        font-family: "sour";
+        src: url("../resource/SourGummy.ttf");
+      }
+      .newFont {
+        font-family: "sour";
+        font-size: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Web font</h1>
+    <strong style="font-size: 100px">font</strong><br />
+    <strong class="newFont">font</strong><br />
+    使用@font-face新增自訂的font，自訂font名稱、src值可填local(本機有的自型)/url(外部字型)
+    <hr />
+    <h1>Icon font</h1>
+    導入該icon font之CSS後，輸入對應class即可產生
+    <br />
+    i:<i class="icofont-duotone icofont-compass"></i>
+    <br />
+    span:<span class="icofont-duotone icofont-compass"></span>
+    <br />
+    div:
+    <div class="icofont-duotone icofont-compass"></div>
+  </body>
+</html>
