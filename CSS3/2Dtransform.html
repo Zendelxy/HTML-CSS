@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D轉換</title>
+    <style>
+      .container {
+        display: inline-block;
+        margin-right: 75px;
+      }
+      .outer {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin-bottom: 50px;
+        margin-top: 30px;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        text-align: center;
+        line-height: 100px;
+      }
+
+      .transX {
+        transform: translateX(50px);
+      }
+      .transY {
+        transform: translateY(50px);
+      }
+      .trans {
+        transform: translate(50px, 20px);
+      }
+
+      .scaleX {
+        transform: scaleX(0.5);
+      }
+      .scaleY {
+        transform: scaleY(1.2);
+      }
+      .scale {
+        transform: scale(0.5);
+      }
+
+      .rotate {
+        transform: rotate(85deg);
+      }
+
+      .skewX {
+        transform: skewX(10deg);
+      }
+      .skewY {
+        transform: skewY(10deg);
+      }
+      .skew {
+        transform: skew(10deg, 40deg);
+      }
+
+      .mult1 {
+        transform: translate(20px, 5px) rotate(50deg);
+      }
+      .mult2 {
+        transform: rotate(50deg) translate(20px, 5px);
+      }
+
+      .transOri {
+        transform-origin: left top;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>translate平移</h1>
+    <div class="container">
+      translateX(px/%)
+      <div class="outer">
+        <div class="inner transX">inner</div>
+      </div>
+    </div>
+    <div class="container">
+      translateY(px/%)
+      <div class="outer">
+        <div class="inner transY">inner</div>
+      </div>
+    </div>
+    <div class="container">
+      translate(px/%)
+      <div class="outer">
+        <div class="inner trans">inner</div>
+      </div>
+    </div>
+    <br />
+    ※translate只填一值的話，只會移動X而非一起移動
+    <hr />
+    <h1>scale縮放</h1>
+    <div class="container">
+      scaleX
+      <div class="outer">
+        <div class="inner scaleX">inner</div>
+      </div>
+    </div>
+    <div class="container">
+      scaleY
+      <div class="outer">
+        <div class="inner scaleY">inner</div>
+      </div>
+    </div>
+    <div class="container">
+      scale
+      <div class="outer">
+        <div class="inner scale">inner</div>
+      </div>
+    </div>
+    <br />
+    ※可填入無單位之數值，>1時放大、<1時縮小、=1時不變、<0時反轉
+    <hr />
+    <h1>rotate旋轉</h1>
+    <div class="container">
+      rotate(deg) = rotateZ(deg)
+      <div class="outer">
+        <div class="inner rotate">inner</div>
+      </div>
+    </div>
+    <hr />
+    <h1>skew傾斜</h1>
+    <div class="container">
+      skewX(deg)
+      <div class="outer">
+        <div class="inner skewX">inner</div>
+      </div>
+    </div>
+    <div class="container">
+      skewY(deg)
+      <div class="outer">
+        <div class="inner skewY">inner</div>
+      </div>
+    </div>
+    <div class="container">
+      skew(degX, degY)
+      <div class="outer">
+        <div class="inner skew">inner</div>
+      </div>
+    </div>
+    <br />
+    ※由左上和右下沿著X/Y軸被拉出的角度，即為填入的值
+    <hr />
+    <h1>複合屬性</h1>
+    <div class="container">
+      transform:A(x) B(y);
+      <div class="outer">
+        <div class="inner mult1">先平移再轉</div>
+      </div>
+    </div>
+    <div class="container">
+      transform:A(x) B(y);
+      <div class="outer">
+        <div class="inner mult2">先轉再平移</div>
+      </div>
+    </div>
+    <br />
+    ※由於每一步都會改變之後的坐標系，因此順序很重要
+    <hr />
+    <h1>transform-origin變換原點</h1>
+    (不是transform的子屬性)
+    <br />
+    transform-origin: x y;
+    <br />
+    默認值為center，可用keyword(top/left...)、px、%等
+    <br />
+    <div class="container">
+      scale
+      <div class="outer">
+        <div class="inner transOri scale">inner</div>
+      </div>
+    </div>
+    <div class="container">
+      rotate
+      <div class="outer">
+        <div class="inner transOri rotate">inner</div>
+      </div>
+    </div>
+    <div class="container">
+      skew
+      <div class="outer">
+        <div class="inner transOri skew">inner</div>
+      </div>
+    </div>
+    <br />
+    ※只影響繞著一的點動作的transform(scale, rotate, skew等)
+  </body>
+</html>
