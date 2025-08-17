@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D轉換</title>
+    <style>
+      .note {
+        text-decoration-line: underline;
+        color: red;
+      }
+
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      .inline {
+        display: inline-block;
+        margin-right: 50px;
+      }
+      .container {
+        transform-style: preserve-3d;
+        perspective: 300px;
+        text-align: center;
+        line-height: 200px;
+        margin-left: 50px;
+      }
+
+      .transZ {
+        background-color: gray;
+        transform: translateZ(50px);
+        opacity: 0.7;
+      }
+      .trans3d {
+        background-color: gray;
+        transform: translate3d(10px, 10px, -5px);
+        opacity: 0.7;
+      }
+
+      .rotX {
+        background-color: pink;
+        transform: rotateX(45deg);
+        opacity: 0.7;
+      }
+      .rotY {
+        background-color: pink;
+        transform: rotateY(30deg);
+        opacity: 0.7;
+      }
+      .rot {
+        background-color: pink;
+        transform: rotateX(45deg);
+        opacity: 0.7;
+        transform-origin: top;
+      }
+      .rot3d {
+        background-color: pink;
+        transform: rotate3d(0, 2, -2, 45deg);
+        opacity: 0.7;
+      }
+
+      .scale {
+        background-color: thistle;
+        transform: scaleZ(1.5);
+        opacity: 0.7;
+      }
+
+      .visible {
+        background-color: steelblue;
+        transform: scale(0.8) rotateX(180deg);
+        backface-visibility: visible;
+        opacity: 0.7;
+      }
+      .hidden {
+        background-color: steelblue;
+        transform: scale(0.8) rotateX(180deg);
+        backface-visibility: hidden;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>transform-style</h1>
+    flat:默認值，子元素置於同一2D平面內(不會互相遮擋)
+    <br />
+    preserve-3d:子元素置於同一3D空間內
+    <br />
+    <span class="note">※不用preserve-3d，子元素就會「各自為政」!</span>
+    <hr />
+    <h1>perspective透視距離</h1>
+    none:默認值，無窮遠
+    <br />
+    N px:需&gt;=1,&lt;1則會被當作1
+    <hr />
+    <h1>perspective-origin透視點(觀察者位置)</h1>
+    x y:可填keyword、px、%
+    <hr />
+    <h1>3D translate</h1>
+    灰色部分為平移過後的區塊，不轉動鏡頭的話，對於z軸平移只會有放大縮小的感覺
+    <br />
+    translateZ(z):
+    <div class="container"><div class="transZ">translateZ(50px)</div></div>
+    <br />
+    translate3d(x,y,z):
+    <div class="container">
+      <div class="trans3d">translate3d(10px,10px,-5px)</div>
+    </div>
+    <hr />
+    <h1>3D rotate</h1>
+    rotateX(x)/rotateY(y):繞x/y軸旋轉
+    <br />
+    <div class="container inline"><div class="rotX">rotateX(45deg)</div></div>
+    <div class="container inline"><div class="rotY">rotateY(30deg);</div></div>
+    <br />
+    <span class="note"
+      >※「左手定則」，在螢幕前將左手拇指指向軸之正向，其餘四指方向會是度數的順時針方向</span
+    >
+    <br />
+    可以用transform-origin改變原點，做出不同效果
+    <div class="container"><div class="rot">rotateX(45deg)</div></div>
+    <br />
+    rotate3d(x,y,z,deg):沿著(x,y,z)此向量轉動deg度(x,y,z無單位)
+    <div class="container">
+      <div class="rot3d">rotate3d(0,2,-2,45deg)</div>
+    </div>
+    <hr />
+    <h1>3D scale</h1>
+    scaleZ(z)/scale3d(x,y,z):由於沒有「厚度」，因此直接縮放z軸是沒有用的
+    <div class="container">
+      <div class="scale">scaleZ(1.5);</div>
+    </div>
+    <br />
+    <span class="note">※可參考</span
+    ><a
+      href="https://steam.oxxostudio.tw/category/css/content/transform.html#a5"
+      >https://steam.oxxostudio.tw/category/css/content/transform.html#a5</a
+    >
+    <hr />
+    <h1>backface-visibility背部可視</h1>
+    visible:預設值，背部朝向觀察者時也可見
+    <div class="container">
+      <div class="visible">scale(0.8) rotateX(180deg)</div>
+    </div>
+    <br />
+    hidden:背部朝向觀察者時不可見
+    <div class="container">
+      <div class="hidden">scale(0.8) rotateX(180deg)</div>
+    </div>
+  </body>
+</html>
