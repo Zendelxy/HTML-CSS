@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>過渡</title>
+    <style>
+      .title {
+        font-size: 40px;
+        font-weight: 900;
+      }
+      .key {
+        font-size: 20px;
+        color: red;
+        background-color: wheat;
+      }
+
+      .outer {
+        width: 800px;
+        height: 100px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+      }
+      .outer:hover div {
+        background-color: orange;
+        width: 800px;
+      }
+
+      .dura-in {
+        transition-duration: 3s;
+      }
+
+      .delay {
+        transition-duration: 3s;
+        transition-delay: 1s;
+      }
+
+      .linear {
+        transition-duration: 3s;
+        transition-timing-function: linear;
+      }
+      .ease {
+        transition-duration: 3s;
+        transition-timing-function: ease;
+      }
+      .ease-in {
+        transition-duration: 3s;
+        transition-timing-function: ease-in;
+      }
+      .ease-out {
+        transition-duration: 3s;
+        transition-timing-function: ease-out;
+      }
+      .custom {
+        transition-duration: 3s;
+        transition-timing-function: cubic-bezier(0.73, 0.91, 0.79, 2.06);
+      }
+
+      .transBeha {
+        font-size: 30px;
+        margin: 20px;
+        border: 5px solid black;
+        transition-property: border-color, border-style;
+        transition-duration: 4s;
+      }
+      .transBeha:hover {
+        border-color: red;
+        border-style: dashed;
+      }
+      .allow {
+        transition-behavior: allow-discrete;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="title">transition</span>
+    可以定義元件在兩種狀態下的轉換效果<br />
+    他有五項子屬性
+    <ul>
+      <li class="key">transiton-property</li>
+      <li class="key">transiton-duration</li>
+      <li class="key">transiton-delay</li>
+      <li class="key">transiton-timing-function</li>
+      <li class="key">transiton-behavior</li>
+    </ul>
+    <hr />
+    <h2>transiton-property</h2>
+    此屬性定義哪些屬性需要過渡，可填入none、all或想過渡的特定屬性名(複數則以逗號分隔)
+    <br /><span class="key">※可過渡的屬性大多可被量化</span>
+    <hr />
+    <h2>transiton-duration</h2>
+    此屬性定義過渡的持續時間，單位為s/ms且不可為負
+    <div class="outer dura-out"><div class="inner"></div></div>
+    <div class="outer dura-out">
+      <div class="inner dura-in">加上duration以讓其能平滑的過渡</div>
+    </div>
+    <hr />
+    <h2>transiton-delay</h2>
+    此屬性定義過渡的延遲時間，單位為s/ms且不可為負
+    <div class="outer"><div class="inner delay">延遲1s</div></div>
+    <hr />
+    <h2>transiton-timing-function</h2>
+    此屬性定義過渡時的速度曲線，種類繁多，這邊只寫上幾種常見的
+    <ul>
+      <li>linear 均速</li>
+      <li>ease 平滑</li>
+      <li>ease-in 緩入</li>
+      <li>ease-out 緩出</li>
+      <li>step-start 直接完成後，等待持續時間</li>
+      <li>step-end 等待持續時間，隨後直接完成</li>
+      <li>cubic-bezier(n1,n2,n3,n4) 使用貝茲曲線自訂</li>
+    </ul>
+    <div class="outer"><div class="inner linear">linear</div></div>
+    <div class="outer"><div class="inner ease">ease</div></div>
+    <div class="outer"><div class="inner ease-in">ease-in</div></div>
+    <div class="outer"><div class="inner ease-out">ease-out</div></div>
+    <div class="outer"><div class="inner custom">custom</div></div>
+    <hr />
+    <h2>transiton-behavior</h2>
+    此屬性決定離散樣式屬性是否開啟過渡，可填入normal(預設)、allow-discrete
+    <br /><span class="transBeha">normal</span>
+    <span class="transBeha allow">allow-discrete</span>
+    <span class="key">※動畫中點時才跳變</span>
+    <hr />
+    <h2>transition複合屬性</h2>
+    此複合屬性之順序只針對duration和delay，其中duration順位為第一，delay則為第二
+  </body>
+</html>
