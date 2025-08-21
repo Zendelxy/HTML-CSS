@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>動畫</title>
+    <style>
+      body {
+        font-size: 16px;
+      }
+      code {
+        display: block;
+        background: black;
+        color: white;
+        padding: 10px 50px;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>設定/製作動畫</h1>
+    <code>@keyframes name {...} === @keyframes "name" {...}</code>
+    <strong
+      >※name等效於"name"，名稱之大小寫有區別，特殊名稱(如none)加上"
+      "後可用</strong
+    >
+    <br />
+    製作動畫時，需先定義關鍵幀(keyframe)，如開頭、結尾和過程，開頭可用from或0%表示，結尾可用to或100%表示，過程則只能以百分比(n%)表示
+    <code>@keyframes name { from{...} n%{...} to{...} }</code>
+    <hr />
+    <h1>animation-name動畫名稱</h1>
+    指定所要執行的動畫名稱
+    <hr />
+    <h1>animation-duration</h1>
+    動畫持續時間(s/ms)
+    <hr />
+    <h1>animation-delay</h1>
+    動畫執行前的延遲時間(s/ms)
+    <hr />
+    <h1>animation-timing-function</h1>
+    此屬性定義過渡時的速度曲線，可用之值同transition-timing-function
+    <hr />
+    <h1>animation-direction</h1>
+    動畫播放方向
+    <ul>
+      <li>normal:預設值</li>
+      <li>reverse:反轉播放</li>
+      <li>alternate:正反輪流播放(奇數正，偶數反)</li>
+      <li>alternate-reverse:與alternate相反(奇數反，偶數正)</li>
+    </ul>
+    <hr />
+    <h1>animation-fill-mode動畫執行之外的樣式</h1>
+    <ul>
+      <li>none:預設值，結束時返回原始狀態</li>
+      <li>forwards:結束時保持在最後的影格</li>
+      <li>backwards:未開始時保持在第一個影格，結束時保持在第一個影格</li>
+      <li>both:未開始時保持在第一個影格，結束時保持在最後的影格</li>
+    </ul>
+    做個表格以方便理解:
+    <table border="2">
+      <thead>
+        <tr>
+          <th>值</th>
+          <th>開始前(delay)</th>
+          <th>結束</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>none</td>
+          <td>原始模樣</td>
+          <td>原始模樣</td>
+        </tr>
+        <tr>
+          <td>forwards</td>
+          <td>原始模樣</td>
+          <td>100%時的模樣</td>
+        </tr>
+        <tr>
+          <td>backwards</td>
+          <td>0%時的模樣</td>
+          <td>原始模樣</td>
+        </tr>
+        <tr>
+          <td>both</td>
+          <td>0%時的模樣</td>
+          <td>100%時的模樣</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <h1>animation-play-state播放狀態</h1>
+    <ul>
+      <li>running:預設值，運行</li>
+      <li>paused:暫停</li>
+    </ul>
+    <hr />
+    <h1>animation-iteraion-count播放次數</h1>
+    <ul>
+      <li>n:預設為1，可自訂次數</li>
+      <li>infinite:無限次</li>
+    </ul>
+    <hr />
+    <h1>animation複合屬性</h1>
+    同transition，除了duration第一、delay第二以外沒有順序限制
+    <br />※animation-play-state一般單獨使用
+    <hr />
+    <h1>transition與animation差異</h1>
+    啟動:transition啟動像「手排」，需要觸發條件才會動。animation啟動則像「自排」，會自動開始，不過也能以JS控制
+    <br />
+    操縱:transition只能從狀態A到狀態B。animation則可以設定關鍵幀
+  </body>
+</html>

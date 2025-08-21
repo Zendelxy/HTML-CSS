@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>running horse</title>
+    <style>
+      @keyframes horse {
+        0% {
+          background-position: 0px 0px;
+        }
+        6.25% {
+          background-position: -145px 0px;
+        }
+        12.5% {
+          background-position: -290px 0px;
+        }
+        18.75% {
+          background-position: -435px 0px;
+        }
+
+        25% {
+          background-position: 0px -104px;
+        }
+        31.25% {
+          background-position: -145px -104px;
+        }
+        37.5% {
+          background-position: -290px -104px;
+        }
+        43.75% {
+          background-position: -435px -104px;
+        }
+
+        50% {
+          background-position: 0px -208px;
+        }
+        56.25% {
+          background-position: -145px -208px;
+        }
+        62.5% {
+          background-position: -290px -208px;
+        }
+        68.75% {
+          background-position: -435px -208px;
+        }
+
+        75% {
+          background-position: 0px -312px;
+        }
+        81.25% {
+          background-position: -145px -312px;
+        }
+        87.5% {
+          background-position: -290px -312px;
+        }
+        93.75% {
+          background-position: -435px -312px;
+        }
+
+        100% {
+          background-position: -435px -312px;
+        }
+      }
+      .runningHorse {
+        width: 145px;
+        height: 104px;
+        background-image: url(../resource/horse.jpg);
+        animation: horse 1s infinite step-start;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="runningHorse"></div>
+    </div>
+  </body>
+</html>
