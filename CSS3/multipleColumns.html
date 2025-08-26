@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多欄布局</title>
+    <style>
+      strong {
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>multiple columns多欄布局</h1>
+    又稱分欄布局，將文本&內容分成多個直欄(類似報紙)
+    <hr />
+    <h1>column-width每欄寬度</h1>
+    預設為auto，由其他CSS值決定(如column-count)
+    <br />可自行指定值(length)，不可為負或百分比
+    <br />※實際長度與指定值不一定相同(補滿可利用空間)
+    <h1>column-count分欄數目</h1>
+    預設為auto，由其他CSS值決定(如column-width)
+    <br />可自行指定值(integer)
+    <h1>column</h1>
+    前兩者的複合屬性<br />
+    <strong>※width與count優先級:全部轉換成count後，哪個較少就選哪個</strong>
+    <hr />
+    <h1>column-rule-color分隔線顏色</h1>
+    <h1>column-rule-style分隔線類型</h1>
+    <h1>column-rule-width分隔線寬度</h1>
+    此屬性有keyword可用，分別為thin(1px)、medium(3px，預設)、thick(5px)
+    <h1>column-rule</h1>
+    ※以上四種屬性之值都同border
+    <hr />
+    <h1>column-span跨多欄顯示</h1>
+    all:橫跨全部欄
+    <br />
+    none:預設
+    <hr />
+    <h1>column-fill如何平衡美蘭內容</h1>
+    auto:按順序填充每欄，內容僅占用其所需空間
+    <br />
+    balance:預設，將內容平衡至各欄
+    <br />
+    balance-auto(可忽略):可balance就balance，否則auto
+    <hr />
+    <h1>column-gap每欄間空隙大小</h1>
+    normal:預設，多欄布局中為1em(1倍的font-size)，在其他布局中為0
+    <br />
+    自訂: length/percentage
+    <hr />
+    <h1>相關CSS</h1>
+    每個可能的斷點會受到以下三個屬性的影響
+    <ul>
+      <li>前一元素的break-after:是否在此元素後分新欄(此欄結尾)</li>
+      <li>後一元素的break-before:是否在此元素前分新欄(新欄開頭)</li>
+      <li>包含元素的break-inside:此元素能否被拆開</li>
+    </ul>
+    重點關注auto與avoid兩值即可
+    <br />
+    auto:預設，讓瀏覽器自行判斷/avoid:避免
+    <br />
+    ※優先級:before>after>inside
+  </body>
+</html>
