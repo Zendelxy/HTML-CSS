@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flexible box</title>
+    <style>
+      .example {
+        justify-content: space-around;
+        align-items: center;
+      }
+      .con {
+        width: 300px;
+        height: 200px;
+        background-color: orange;
+        border: 3px solid black;
+        display: flex;
+      }
+      .item {
+        width: 50px;
+        height: 100px;
+        background-color: skyblue;
+        border: 1px solid black;
+        box-sizing: border-box;
+      }
+
+      .dir {
+        flex-direction: row-reverse;
+      }
+      .wrap {
+        flex-wrap: wrap-reverse;
+      }
+
+      .jus {
+        justify-content: space-around;
+      }
+      .box1 {
+        width: 100px;
+        height: 50px;
+        font-size: 30px;
+      }
+      .box2 {
+        height: 70px;
+      }
+      .base {
+        align-items: baseline;
+      }
+      .self {
+        align-self: flex-end;
+      }
+      .con2 {
+        width: 200px;
+        height: 300px;
+        align-content: space-evenly;
+      }
+      .order1 {
+        width: 60px;
+        order: 1;
+      }
+      .order2 {
+        width: 60px;
+        order: 2;
+      }
+      .order3 {
+        width: 60px;
+        order: 3;
+      }
+      .order4 {
+        width: 60px;
+        order: 4;
+      }
+      .order5 {
+        width: 60px;
+        order: 5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flexible box彈性盒子</h1>
+    結構如下，container↓
+    <div class="example con">
+      <div class="item">item</div>
+      <div class="item">item</div>
+    </div>
+    為父元素添加display:flex或inline-flex會使其變為flex
+    container，子元素則變為flex item<br />
+    <strong>※flex表現同block，inline-flex則同inline-block</strong>
+    <hr />
+    <h1>flex-direction排列方向</h1>
+    子元素排列方向<br />
+    row:預設，方向為→ <br />
+    row-reverse:方向為← <br />
+    column:方向為↓ <br />
+    column-reverse:方向為↑<br />
+    row-reverse↓
+    <div class="con dir">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+    </div>
+    <hr />
+    <h1>flex-wrap換行方式</h1>
+    nowrap:預設，不換行<br />
+    wrap:換行<br />
+    wrap-reverse:反向換行<br />
+    wrap-reverse↓
+    <div class="con wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+    </div>
+    <hr />
+    <h1>flex-flow</h1>
+    direction+wrap複合屬性，若只輸入單一屬性值，另外一個屬性就會帶入預設值
+    <hr />
+    <h1>row-gap</h1>
+    item間垂直間距
+    <h1>column-gap</h1>
+    item間水平間距
+    <h1>gap</h1>
+    前兩者的複合屬性，垂直 水平
+    <br /><strong>※這三項屬性與主軸方向無關</strong>
+    <hr />
+    <h1>justify-content水平對齊</h1>
+    <ul>
+      <li>flex-start:預設值，對齊起點</li>
+      <li>flex-end:對齊終點</li>
+      <li>center:居中對齊</li>
+      <li>space-between:左右靠邊，均分間距</li>
+      <li>space-around:均分間距，所有元素左右間距相同</li>
+      <li>space-evenly:包括起點、終點一起均分間距</li>
+    </ul>
+    space-around↓
+    <div class="con jus">
+      <div class="item box1">x</div>
+      <div class="item box2">x</div>
+      <div class="item">x</div>
+    </div>
+    <hr />
+    <h1>align-items單行垂直對齊</h1>
+    <ul>
+      <li>flex-start:對齊起點</li>
+      <li>flex-end:對齊終點</li>
+      <li>center:居中對齊</li>
+      <li>normal:預設值，在flex中同stretch</li>
+      <li>stretch:有設置高度者上緣對齊起點，無設置者撐滿高度</li>
+      <li>baseline:等於first baseline，對齊baseline，最高處對齊起點</li>
+      <li>last baseline:對齊baseline，最低處對齊終點</li>
+    </ul>
+    baseline↓
+    <div class="con jus base">
+      <div class="item box1">x</div>
+      <div class="item box2">x</div>
+      <div class="item">x</div>
+    </div>
+    <h1>align-self單一item垂直對齊</h1>
+    <ul>
+      <li>auto:預設值，跟隨原本的align-items</li>
+      <li>其他值同align-items</li>
+      <div class="con jus base">
+        <div class="item box1">x</div>
+        <div class="item box2 self">flex-end</div>
+        <div class="item">x</div>
+      </div>
+    </ul>
+    <hr />
+    <h1>align-content多行垂直對齊</h1>
+    <ul>
+      <li>normal:預設值，在flex中同stretch</li>
+      <li>stretch:所有列均分剩餘空間，item無設定高度者撐滿該列高度</li>
+      <li>flex-start:對齊起點</li>
+      <li>flex-end:對齊終點</li>
+      <li>center:居中對齊</li>
+      <li>space-between:上下靠邊，均分間距</li>
+      <li>space-around:均分間距，所有元素上下間距相同</li>
+      <li>space-evenly:包括起點、終點一起均分間距</li>
+    </ul>
+    space-evenly↓
+    <div class="con wrap con2">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+    </div>
+    <hr />
+    <h1>Order item順序</h1>
+    預設為0，值越小越靠近主軸起點
+    <div class="con">
+      <div class="item order5">1(order5)</div>
+      <div class="item order3">2(order3)</div>
+      <div class="item order4">3(order4)</div>
+      <div class="item order2">4(order2)</div>
+      <div class="item order1">5(order1)</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex伸縮</title>
+    <style>
+      .container {
+        width: 300px;
+        height: 250px;
+        background-color: orange;
+        border: 3px solid black;
+        display: flex;
+        margin: 10px;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        border: 1px solid black;
+      }
+      .wrap {
+        flex-wrap: wrap;
+      }
+      .b1 {
+        flex-basis: 70px;
+      }
+      .b2 {
+        flex-basis: 200px;
+      }
+      .reverseDir {
+        flex-direction: column;
+      }
+      .g1 {
+        flex-grow: 1;
+      }
+      .g2 {
+        flex-grow: 2;
+      }
+      .g3 {
+        flex-grow: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex-basis 基礎長度</h1>
+    在主軸方向上的基礎長度，若是主軸是垂直的的話，這個「長度」就是指高
+    <ul>
+      <li>auto:預設值，保持原本的數值</li>
+      <li>&lt;length&gt;,&lt;percentage&gt;</li>
+    </ul>
+    <div class="container wrap">
+      <div class="item b1">70px</div>
+      <div class="item b2">200px</div>
+      <div class="item b3">no basis</div>
+    </div>
+    <div class="container wrap reverseDir">
+      <div class="item b1">70px</div>
+      <div class="item b2">200px</div>
+      <div class="item b3">no basis</div>
+    </div>
+    <strong
+      >※容器大小不足時，每個item之縮小量=((自己的basis/所有人basis總和)*缺少的空間)，但最少也會保證內容正常顯示(最小大小取決於內容)</strong
+    >
+    <hr />
+    <h1>flex-grow flex伸展</h1>
+    所有item依flow-grow按比例分配剩餘空間
+    <br />
+    值為非負數字，小數也可以
+    <div class="container wrap">
+      <div class="item g1">1</div>
+      <div class="item g2">2</div>
+      <div class="item g3">0.5</div>
+      <div class="item g2">2</div>
+    </div>
+    <hr />
+    <h1>flex-shrink flex縮減</h1>
+    按權重分配縮小量<br />
+    計算方式:<br />
+    總權重 = 各個item*各自的shrink<br />
+    item的縮小量 = (自己的權重/總權重)*要縮減的空間<br />
+    <hr />
+    <h1>flex複合屬性(basis+grow+shrink)</h1>
+    <ul>
+      <li>flex:0 1 auto = flex:0 auto = flex:inital，預設值</li>
+      <li>flex:1 1 auto = flex:auto</li>
+      <li>flex:0 0 auto = flex:none</li>
+      <li>flex:1 = flex:1 1 0, flex:n 1 0 = flex:n</li>
+    </ul>
+  </body>
+</html>
