@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>媒體查詢</title>
+    <style>
+      h1 {
+        font-size: 80px;
+        color: blue;
+      }
+      h2 {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      code {
+        background-color: black;
+        color: aliceblue;
+      }
+      @media screen and (max-width: 800px) {
+        h1 {
+          font-size: 60px;
+          color: skyblue;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      media="screen and (max-width:500px)"
+      href="mediaQueries.css"
+    />
+  </head>
+  <body>
+    <h1>@media MediaQueries 媒體查詢</h1>
+    透過邏輯條件判斷媒體條件達成響應式網頁(RWD)的效果<br />
+    (拉動螢幕看看標題變化)
+    <h2>media types媒體類型</h2>
+    <ul>
+      <li>all:所有設備</li>
+      <li>screen:螢幕</li>
+      <li>print:列印裝置，包括列印介面</li>
+    </ul>
+    <h2>media features媒體特色</h2>
+    視口寬高:
+    <ul>
+      <li>width</li>
+      <li>max-width</li>
+      <li>min-width</li>
+      <li>height</li>
+      <li>max-height</li>
+      <li>min-height</li>
+    </ul>
+    螢幕寬高:
+    <ul>
+      <li>device-width</li>
+      <li>max-device-width</li>
+      <li>min-device-width</li>
+    </ul>
+    方向(orientation):
+    <ul>
+      <li>landscape橫</li>
+      <li>portrait直</li>
+    </ul>
+    還有很多其他features，有需要再去W3C查
+    <h2>條件語法</h2>
+    <ul>
+      <li>or 或:<code>(條件A),(條件B){...} = (條件A)or(條件B){...}</code></li>
+      <li>and且:<code>(條件A)and(條件B){...}</code></li>
+      <li>not非:<code>not screen{...}</code></li>
+      <li>only只有:<code>only print{...}</code></li>
+    </ul>
+  </body>
+</html>
