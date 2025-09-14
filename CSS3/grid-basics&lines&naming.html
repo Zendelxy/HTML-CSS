@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid基礎架構&畫格線&格線命名</title>
+  </head>
+  <style>
+    pre {
+      background-color: #999;
+    }
+    img {
+      width: 500px;
+      height: 300px;
+    }
+
+    .example {
+      width: max-content;
+      border: 1px solid black;
+      display: grid;
+      grid-template:
+        "track . ." 50px
+        "track . area" 50px
+        "track cell area" 50px / 50px 50px 50px;
+    }
+    .example > div {
+      border: 1px solid black;
+    }
+    .example .tr {
+      grid-area: track;
+      background-color: gray;
+    }
+    .example .a {
+      grid-area: area;
+      background-color: skyblue;
+    }
+    .example .c {
+      grid-area: cell;
+      background-color: salmon;
+    }
+
+    .repeat {
+      width: 300px;
+      display: grid;
+      border: 1px solid black;
+      margin: 10px;
+      justify-content: center;
+    }
+    .repeat > div {
+      border: 1px solid black;
+      background-color: sandybrown;
+    }
+    .fill {
+      grid-template-columns: repeat(auto-fill, 20px 50px);
+    }
+    .fit {
+      grid-template-columns: repeat(auto-fit, 20px 50px);
+    }
+  </style>
+  <body>
+    <h1>grid布局</h1>
+    又稱格線布局或網格布局，透過在container(display為grid的元素)中畫線的方式分割區域，再將子元素(item)放入<br />
+    grid同flex一樣可用inline-*作為display值<br />
+    <strong>※grid item也同flex item一樣會block化</strong><br />
+    grid不支援float,clear,vertical-align,multiple-columns的相關屬性<br />
+    <strong>※對於無標籤元素，會產生一個虛擬標籤包裹住他</strong>
+    <hr />
+    <h1>grid基礎架構</h1>
+    <div class="example">
+      <div class="tr">track</div>
+      <div class="a">area</div>
+      <div class="c">cell</div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul>
+      <li>grid line格線:劃分出各個區域的線</li>
+      <li>grid track軌道:兩條格線之間的空間</li>
+      <li>grid cell單元格:格線畫出的1x1的空間</li>
+      <li>grid area區域:格線畫出的大於等於1x1的空間，且必須為矩形</li>
+    </ul>
+    <hr />
+    <h1>grid-template-columns/rows grid容器列高/行高</h1>
+    以空白隔開多個數值<br />
+    尺寸設定方式:
+    <ol>
+      <li>固定尺寸:%, px, vh/vw...</li>
+      <li>彈性尺寸:fr，將剩餘空間按比例分配</li>
+      <li>
+        自動適應內容
+        <ul>
+          <li>max-content內容所需空間的最大值</li>
+          <li>min-content內容所需空間的最小值</li>
+          <li>minmax(min,max)將寬度限制在min~max間</li>
+        </ul>
+      </li>
+      <li>
+        限制最大尺寸:fit-content()，可填&lt;length&gt;或&lt;percentage&gt;<br />
+        限制寬度不超過指定值，但會至少保證內容正常顯示(min-content)<br />
+        完整公式:min(max-content,max(arug,min-content))
+      </li>
+      <li>
+        重複產生:repeat(次數,設定)<br />
+        次數:
+        <ol>
+          <li>非負整數</li>
+          <li>auto-fill</li>
+          <li>auto-fit</li>
+        </ol>
+        兩者差異:auto-fill會建立空軌道來觀察剩餘空間，auto-fit則不會<br />
+        <strong>※用justify-content:center可以輕易觀察到差別</strong><br />
+        auto-fill:
+        <div class="repeat fill">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+        auto-fit:
+        <div class="repeat fit">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+      </li>
+      <li>auto:根據內容&剩餘空間自動伸縮(min-content~max-content之間)</li>
+      <hr />
+      <h1>格線命名</h1>
+      方式
+      <ol>
+        <li>
+          grid-template-columns/rows:[名1] px [名3] px [名3]<br />
+          在每個track前後加上名稱，要為同一條線設定多個名字須以空格隔開([名1
+          名2])
+        </li>
+        <li>
+          grid-template-area自動產生:<br />
+          <code>
+            <pre>
+grid-template-areas:"a a"
+                    "b .";</pre
+            >
+          </code>
+          <img src="../resource/area-example.png" /><br />
+          <strong>※"."代表此格為空白格</strong><br />
+          <strong>※必須是矩形</strong><br />
+          <strong>※自動產生時，track默認為auto</strong>
+        </li>
+        <li>
+          grid-template:grid-template-areas+grid-template-rows/columns<br />
+          <code>
+            <pre>
+grid-template:[c] "a a" 10px
+              [d] "b ." 20px
+              [e]/[f] 30px [g] 40px [h]</pre
+            ></code
+          ><br />
+          <img src="../resource/grid-template-example.png" /><br />
+          <strong>※格式為先rows再columns，且不支援repeat</strong>
+        </li>
+      </ol>
+    </ol>
+  </body>
+</html>
