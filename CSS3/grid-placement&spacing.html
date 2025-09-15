@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid放置與間距</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>grid-auto-flow 網格流向</h1>
+    決定自動放置的方向&方式
+    <ul>
+      <li>row:預設值，水平填滿一列，再換下列</li>
+      <li>column:垂直填滿一行，再換下行</li>
+      <li>row dense:同row，但會回填剩餘空間</li>
+      <li>rcolumn dense:同column，但會回填剩餘空間</li>
+    </ul>
+    <strong
+      >※不指定起始格線(grid-row/column-start)時，grid-auto-flow才有用</strong
+    >
+    <h1>grid-auto-columns/rows 自動格線</h1>
+    設定自動生成時的軌道大小，複數值以空格隔開
+    <ul>
+      <li>&lt;length&gt;</li>
+      <li>fr</li>
+      <li>minmax()</li>
+    </ul>
+    生效時機:
+    <ol>
+      <li>item數超出已定義的格子數</li>
+      <li>手動指定超出範圍的位置</li>
+    </ol>
+    <h1>grid的兩種縮寫</h1>
+    <ol>
+      <li>
+        template:
+        grid-template-rows+grid-template-columns+grid-template-areas(與grid-template縮寫效果一樣)
+      </li>
+      <li>
+        auto-flow:
+        grid-auto-rows+grid-auto-columns+grid-auto-flow(實驗性，不推薦用)<br />
+        語法:
+        <ul>
+          <li>row:auto-flow (dense) row / column</li>
+          <li>column:row / auto-flow (dense) column</li>
+        </ul>
+      </li>
+    </ol>
+    <hr />
+    <h1>網格間距</h1>
+    決定欄與列之間的間距，有兩種寫法，屬性名不同但效果相同，建議使用新的語法就好<br />
+    舊:
+    <ul>
+      <li>grid-row-gap 每列間距</li>
+      <li>grid-column-gap 每欄間距</li>
+      <li>
+        grid-gap
+        同時設定row+column的間距，寫法也是row+column，只有一個值則列欄間距共用
+      </li>
+    </ul>
+    新:
+    <ul>
+      <li>row-gap 每列間距</li>
+      <li>column-gap 每欄間距</li>
+      <li>
+        gap
+        同時設定row+column的間距，寫法也是row+column，只有一個值則列欄間距共用
+      </li>
+    </ul>
+    新寫法已規範成能與flex, multiple-columns等布局通用
+    <hr />
+    <h1>item邊界</h1>
+    屬性:
+    <ul>
+      <li>grid-row-start item上邊界</li>
+      <li>grid-row-end item下邊界</li>
+      <li>grid-column-start item左邊界</li>
+      <li>grid-column-end item右邊界</li>
+    </ul>
+    值:
+    <ul>
+      <li>
+        auto，預設值，對於start表現為依演算法自動尋找，對於end則是跨一行/列(span
+        1)
+      </li>
+      <li>自訂行/列</li>
+      <li>
+        span
+        &lt;number&gt;，表示跨n行，start,end皆可用，但另一個需要指定(不能同時用，同時使用會導致兩個值都變auto)
+      </li>
+    </ul>
+    指定方式:
+    <ol>
+      <li>編號:由1開始，可寫負值，-n代表倒數n條線</li>
+      <li>
+        名稱:填入自己命名的格線名<br /><strong
+          >※格線同名時，以 名稱 出現順序 的方式來指定，例如:n
+          1即是第一條叫n的格線</strong
+        >
+      </li>
+      <li>
+        網格名稱:本質上與上一項相同，以grid-template-areas定義區域後自動生成的格線名(xx-start,
+        xx-end等)來指定
+      </li>
+    </ol>
+    <h1>item邊界縮寫</h1>
+    <ul>
+      <li>grid-row:grid-row-start/grid-row-end</li>
+      <li>grid-column:grid-column-start/grid-column-end</li>
+      <li>
+        grid-area:grid-row-start/grid-column-start/grid-row-end/grid-column-end
+      </li>
+    </ul>
+    <hr />
+    <h1>grid-area 網格區域</h1>
+    可作為item邊界縮寫，也可以與grid-template-areas配合直接使用區域名稱來放置item<br />
+    <strong>※會無視元素在html中的順序，直接將其放至指定區域</strong>
+  </body>
+</html>
