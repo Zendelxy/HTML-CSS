@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid對齊與順序</title>
+    <style>
+      .title {
+        font-size: 40px;
+        outline: 1px solid black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">justify-* grid水平對齊</h1>
+    <h1>justify-self 單一item在格子內的水平對齊</h1>
+    <ul>
+      <li>stretch:預設值，拉伸填滿格子寬</li>
+      <li>auto:justify-items的設定</li>
+      <li>start:對齊起點，以容器書寫方向為主，rtl為右，ltr為左</li>
+      <li>end:對齊終點，以容器書寫方向為主，rtl為左，ltr為右</li>
+      <li>center:置中</li>
+      <li>left:靠左，不受文字方向影響</li>
+      <li>right:靠右，不受文字方向影響</li>
+      <li>self-start:以item書寫方向為主，rtl為右，ltr為左</li>
+      <li>self-end:以item書寫方向為主，rtl為左，ltr為右</li>
+    </ul>
+    <strong
+      >※在現在大多使用單一語言的情境下，left/right/self-start/self-end與start/end效果是一樣的</strong
+    >
+    <h1>justify-items 所有item在格子內的水平對齊</h1>
+    <ul>
+      <li>stretch:預設值，拉伸填滿格子寬</li>
+      <li>start:對齊起點，以容器書寫方向為主，rtl為右，ltr為左</li>
+      <li>end:對齊終點，以容器書寫方向為主，rtl為左，ltr為右</li>
+      <li>center:置中</li>
+      <li>left:靠左，不受文字方向影響</li>
+      <li>right:靠右，不受文字方向影響</li>
+      <li>self-start:以item書寫方向為主，rtl為右，ltr為左</li>
+      <li>self-end:以item書寫方向為主，rtl為左，ltr為右</li>
+    </ul>
+    <h1>justify-content 每排item在row中的水平對齊</h1>
+    與前兩者的差別在於，對齊並非是在格子中而是容器中
+    <ul>
+      <li>stretch:預設值，拉伸格子填滿寬</li>
+      <li>start:對齊起點，以容器書寫方向為主，rtl為右，ltr為左</li>
+      <li>end:對齊終點，以容器書寫方向為主，rtl為左，ltr為右</li>
+      <li>center:置中</li>
+      <li>space-between:左右靠邊，均分間距</li>
+      <li>space-around:均分間距，所有元素左右間距相同</li>
+      <li>space-evenly:包括起點、終點一起均分間距</li>
+    </ul>
+    <hr />
+    <h1 class="title">align-* grid垂直對齊</h1>
+    <h1>align-self 單一item在格子內的垂直對齊</h1>
+    <ul>
+      <li>stretch:預設值，拉伸填滿格子高</li>
+      <li>auto:繼承align-items的設定</li>
+      <li>start:對齊起點</li>
+      <li>end:對齊終點</li>
+      <li>center:置中</li>
+      <li>self-start:以item書寫方向為主，主要影響直式書寫</li>
+      <li>self-end:以item書寫方向為主，主要影響直式書寫</li>
+    </ul>
+    <h1>align-items 所有item在格子內的垂直對齊</h1>
+    <ul>
+      <li>stretch:預設值，拉伸填滿格子高</li>
+      <li>start:對齊起點</li>
+      <li>end:對齊終點</li>
+      <li>center:置中</li>
+      <li>self-start:以item書寫方向為主，主要影響直式書寫</li>
+      <li>self-end:以item書寫方向為主，主要影響直式書寫</li>
+    </ul>
+    <h1>align-content 每排item在column中的垂直對齊</h1>
+    與前兩者的差別在於，對齊並非是在格子中而是容器中
+    <ul>
+      <li>stretch:預設值，拉伸格子填滿高</li>
+      <li>start:對齊起點</li>
+      <li>end:對齊終點</li>
+      <li>center:置中</li>
+      <li>space-between:左右靠邊，均分間距</li>
+      <li>space-around:均分間距，所有元素左右間距相同</li>
+      <li>space-evenly:包括起點、終點一起均分間距</li>
+    </ul>
+    <hr />
+    <h1>對齊的複合屬性</h1>
+    <ul>
+      <li>place-self -&gt; align-self + justify-self</li>
+      <li>place-items -&gt; align-items + justify-items</li>
+      <li>place-content -&gt; align-content + justify-content</li>
+    </ul>
+    <strong>※只填一值則兩者共用</strong>
+    <hr />
+    <h1>order item順序</h1>
+    此屬性同flex，預設為0，值越小則離起點越近<br />
+    <strong>※只改變順序，不改變層級(z-index)</strong>
+  </body>
+</html>
